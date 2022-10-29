@@ -1,2 +1,3 @@
-# transistor
-Halaman situs untuk periksa spesifikasi smartphone.
+# Micronoter
+
+Halaman sederhana tentang spesifikasi smartphone / smartwatch.
