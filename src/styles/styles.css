@@ -22,8 +22,22 @@ h3 a {
   margin-left: 13px;
 }
 
+.gambar-hasil {
+  width: 30em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #606c761f;
+  border-radius: 3.5px;
+  padding: 20px;
+}
+
 @media (max-width: 40rem) {
   h3 {
     text-align: center;
+  }
+
+  .gambar-hasil {
+    width: 15em;
   }
 }
