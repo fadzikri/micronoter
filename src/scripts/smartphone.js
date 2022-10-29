@@ -1,40 +1,42 @@
 import axios from "axios";
-import loadIdCari from "./detail";
+import loadIdPhone from "./detail";
 
-const url = "https://phone-specs-api.azharimm.dev/v2";
-const cariTempat = document.getElementById("hasil");
+const baseURL = "https://phone-specs-api.azharimm.dev/v2";
+const kueriCari = document.getElementById("phone-cari");
+const tempatCari = document.getElementById("tempat-cari");
 const judulCari = "<h5>Hasil Pencarian</h5>";
 
-document.getElementById("cariKirim").addEventListener("click", async () => {
-  const kueri = document.getElementById("cariSmartphone").value;
-
-  if (!kueri)
-    return (cariTempat.innerHTML = `${judulCari}<p>Kolom pencarian kosong</p>`);
+document.getElementById("kirim-cari").addEventListener("click", async () => {
+  if (!kueriCari.value)
+    return (tempatCari.innerHTML = `${judulCari}<p>Kolom pencarian belum diisi</p>`);
 
   await axios
-    .get(`${url}/search?query=${kueri}`)
-    .then(async (res) => {
-      const data = res.data.data.phones;
-      await hasil(data);
+    .get(`${baseURL}/search?query=${kueriCari.value}`)
+    .then(async (response) => {
+      kueriCari.value = "";
+
+      const datas = response.data.data.phones;
+      await hasilCari(datas);
     })
-    .catch(async (err) => {
-      await console.log(err);
+    .catch(async (error) => {
+      if (error)
+        return (tempatCari.innerHTML = `${judulCari}<p>Maaf, terjadi kesalahan</p>`);
     });
 
-  await loadIdCari();
+  await loadIdPhone();
 });
 
-const hasil = async (data) => {
+const hasilCari = async (datas) => {
   let phones = "";
 
-  if (!data.length)
-    return (cariTempat.innerHTML = `${judulCari}<p>Tidak ada hasil ¯\\_(ツ)_/¯</p>`);
+  if (!datas.length)
+    return (tempatCari.innerHTML = `${judulCari}<p>Tidak ada hasil ¯\\_(ツ)_/¯</p>`);
 
-  Object.values(data).forEach((phone) => {
+  Object.values(datas).forEach((phone) => {
     phones += `<li><a class="hasil-cari" href="#${phone.slug}" id="${phone.slug}" title="${phone.slug}">${phone.phone_name}<a></li>`;
   });
 
-  cariTempat.innerHTML = `${judulCari}<ul class="saran">${phones}<ul>`;
+  tempatCari.innerHTML = `${judulCari}<ul class="saran">${phones}<ul>`;
 };
 
-export { url, cariTempat };
+export { baseURL, tempatCari };
