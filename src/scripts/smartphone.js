@@ -2,18 +2,20 @@ import axios from "axios";
 import loadIdPhone from "./detail";
 
 const baseURL = "https://phone-specs-api.azharimm.dev/v2";
-const kueriCari = document.getElementById("phone-cari");
+const phoneCari = document.getElementById("phone-cari");
 const tempatCari = document.getElementById("tempat-cari");
-const judulCari = "<h5>Hasil Pencarian</h5>";
+const judulCari = "<h4>Hasil Pencarian</h4>";
+
+let slug = null;
 
 document.getElementById("kirim-cari").addEventListener("click", async () => {
-  if (!kueriCari.value)
+  if (!phoneCari.value)
     return (tempatCari.innerHTML = `${judulCari}<p>Kolom pencarian belum diisi</p>`);
 
   await axios
-    .get(`${baseURL}/search?query=${kueriCari.value}`)
+    .get(`${baseURL}/search?query=${phoneCari.value}`)
     .then(async (response) => {
-      kueriCari.value = "";
+      phoneCari.value = "";
 
       const datas = response.data.data.phones;
       await hasilCari(datas);
@@ -33,10 +35,11 @@ const hasilCari = async (datas) => {
     return (tempatCari.innerHTML = `${judulCari}<p>Tidak ada hasil ¯\\_(ツ)_/¯</p>`);
 
   Object.values(datas).forEach((phone) => {
+    slug = phone.slug;
     phones += `<li><a class="hasil-cari" href="#${phone.slug}" id="${phone.slug}" title="${phone.slug}">${phone.phone_name}<a></li>`;
   });
 
   tempatCari.innerHTML = `${judulCari}<ul class="saran">${phones}<ul>`;
 };
 
-export { baseURL, tempatCari };
+export { baseURL, judulCari, tempatCari, slug };

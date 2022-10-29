@@ -7,11 +7,11 @@ h3 a {
   color: #606c76;
 }
 
-.pencarian {
+.kueri-cari {
   position: relative;
 }
 
-.pencarian input[type="submit"] {
+.kueri-cari input[type="submit"] {
   position: absolute;
   right: 0;
   border-top-left-radius: 0;
@@ -23,7 +23,7 @@ h3 a {
 }
 
 .gambar-hasil {
-  width: 30em;
+  width: 20em;
   display: block;
   margin-left: auto;
   margin-right: auto;
