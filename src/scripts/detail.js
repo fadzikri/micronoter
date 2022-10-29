@@ -30,7 +30,7 @@ const deskripsi = async (datas) => {
 
   return (tempatCari.innerHTML = `<h4 id="${slug}">Deskripsi</h4>
   <img src="${imagePhone}" class="gambar-hasil" title="${slug}"><br>
-  <h5>Smartphone</h5>
+  <h5>Produk</h5>
   <p>Nama : ${namaPhone}<br>
   Brand : ${brandPhone}<br>
   ${spesifikPhone}

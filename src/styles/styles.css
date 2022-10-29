@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/TitilliumWeb-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../assets/fonts/TitilliumWeb-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/TitilliumWeb-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../assets/fonts/TitilliumWeb-BoldItalic.ttf");
+}
+
 h3 {
   margin-top: 2rem;
 }
@@ -12,6 +40,7 @@ h3 a {
 }
 
 .kueri-cari input[type="submit"] {
+  background-color: #eceff4;
   position: absolute;
   right: 0;
   border-top-left-radius: 0;
@@ -27,13 +56,65 @@ h3 a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #606c761f;
+  border: 1px solid #4c566a44;
   border-radius: 3.5px;
   padding: 20px;
 }
 
+body {
+  background-color: #eceff4;
+  color: #4c566a;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.7em;
+}
+
+h3 a,
+h4,
+h5,
+p {
+  color: #4c566a;
+}
+
+hr {
+  border: 1px solid #4c566a;
+  border-radius: 1.5px;
+}
+
+#phone-cari,
+#kirim-cari {
+  background-color: inherit;
+  color: #4c566a;
+  border: 1px solid #4c566a;
+  font-family: "Titillium Web", sans-serif;
+}
+
+#kirim-cari {
+  background-color: #4c566a;
+  border-color: #4c566a;
+  color: #eceff4;
+}
+
+#kirim-cari:hover {
+  background-color: #d8dee9;
+  color: #4c566a;
+}
+
+#kirim-cari:active {
+  background-color: #4c566a;
+  color: #eceff4;
+}
+
+ul li a,
+ul li a:visited {
+  color: #4c566a;
+}
+
+ul li a:hover {
+  color: #2e3440;
+}
+
 @media (max-width: 40rem) {
-  h3 {
+  header {
     text-align: center;
   }
 
