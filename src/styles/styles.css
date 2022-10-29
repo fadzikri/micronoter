@@ -1,3 +1,29 @@
+h3 {
+  margin-top: 2rem;
+}
+
+input[type="text"],
+h3 a {
+  color: #606c76;
+}
+
+.pencarian {
+  position: relative;
+}
+
+.pencarian input[type="submit"] {
+  position: absolute;
+  right: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .saran {
-    margin-left: 20px;
+  margin-left: 13px;
+}
+
+@media (max-width: 40rem) {
+  h3 {
+    text-align: center;
+  }
 }
