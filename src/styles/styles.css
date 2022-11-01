@@ -115,10 +115,6 @@ ul li a:hover {
 }
 
 @media (max-width: 40rem) {
-  body {
-    font-size: 1.6em;
-  }
-
   header {
     text-align: center;
   }
