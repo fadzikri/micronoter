@@ -20,6 +20,7 @@ jobs:
           npm install
       - name: Melakukan Build dan Commit
         run: |
+          rm -r dist
           npm run build
           git config user.name fadzikri
           git config user.email 109416385+fadzikri@users.noreply.github.com
