@@ -6,7 +6,7 @@ on:
       - main
  
 jobs:
-  Unit_Testing:
+  Building:
     runs-on: ubuntu-latest
     steps:
       - name: Memasang paket metadata GitHub
