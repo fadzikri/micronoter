@@ -22,7 +22,7 @@ document.getElementById("kirim-cari").addEventListener("click", async () => {
     })
     .catch(async (error) => {
       if (error)
-        return (tempatCari.innerHTML = `${judulCari}<p>Maaf, terjadi kesalahan</p>`);
+        return (tempatCari.innerHTML = `${judulCari}<p>Maaf, terjadi kesalahan pada API</p>`);
     });
 
   await loadIdPhone();
