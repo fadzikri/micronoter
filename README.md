@@ -16,4 +16,4 @@ Berjalan di : <https://fadzikri.github.io/micronoter/dist/index.html>
 
 ---
 
-07 Januari 2022 - API Smartphone Spesifications Mati
+07 Januari 2022 - API Smartphone Spesifications Mati, Project Selesai
